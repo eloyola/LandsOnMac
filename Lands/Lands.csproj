@@ -23,9 +23,6 @@
     <PackageReference Include="Xam.Plugin.Connectivity" Version="3.2.0" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Helpers\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="Resources\" />
     <Folder Include="Views\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Models\" />
@@ -33,11 +30,22 @@
     <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Resources\Resource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
     <Compile Update="Resources\Resources.es.Designer.cs">
       <DependentUpon>Resources.es.resx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Remove="Resources\Resources.es" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Resource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
