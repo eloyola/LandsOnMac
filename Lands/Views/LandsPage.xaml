@@ -2,9 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Lands.Views.LandsPage"
+             xmlns:ffimageLoading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              BackgroundColor="Silver"
              Title="Information">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ffimageloadingsvg:SvgImageSourceConverter x:Key="SvgImageSourceConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout BindingContext="{Binding Lands}">
             <SearchBar
@@ -33,11 +41,15 @@
                                 </Frame.GestureRecognizers>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width=".5*"/>
                                         <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                    <StackLayout 
+                                    <ffimageLoading:CachedImage 
                                         Grid.Column="0"
+                                        Source="{Binding Flag, Converter={StaticResource SvgImageSourceConverter}}"/>
+                                    <StackLayout 
+                                        Grid.Column="1"
                                         VerticalOptions="Center">
                                         <Label 
                                             FontAttributes="Bold"
@@ -51,7 +63,7 @@
                                         </Label>
                                     </StackLayout>
                                     <Image 
-                                        Grid.Column="1"
+                                        Grid.Column="2"
                                         HorizontalOptions="End" 
                                         Source="ic_chevron_right">
                                     </Image>
