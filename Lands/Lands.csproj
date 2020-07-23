@@ -23,5 +23,16 @@
     <Folder Include="Models\" />
     <Folder Include="Infrastructure\" />
     <Folder Include="Services\" />
+    <Folder Include="Resources\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Resources\Resources.es.Designer.cs">
+      <DependentUpon>Resources.es.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Resources\Resources.es" />
   </ItemGroup>
 </Project>
