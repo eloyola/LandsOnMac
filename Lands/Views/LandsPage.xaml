@@ -5,20 +5,24 @@
              xmlns:ffimageLoading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:i18n="clr-namespace:Lands.Helpers"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              BackgroundColor="Silver"
              Title="Information">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <ffimageloadingsvg:SvgImageSourceConverter x:Key="SvgImageSourceConverter"/>
+            <ffimageloadingsvg:SvgImageSourceConverter 
+                x:Key="SvgImageSourceConverter"/>
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout BindingContext="{Binding Lands}">
+        <StackLayout
+            BindingContext="{Binding Lands}">
             <SearchBar
                 BackgroundColor="Silver"
+                HeightRequest="46"
                 Text="{Binding Filter, Mode=TwoWay}"
-                Placeholder="Search..."
+                Placeholder="{i18n:Translate Search}"
                 SearchCommand="{Binding SearchCommand}">
             </SearchBar>
             <ListView 
@@ -41,13 +45,15 @@
                                 </Frame.GestureRecognizers>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width=".5*"/>
+                                        <ColumnDefinition Width="Auto"/>
                                         <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <ffimageLoading:CachedImage 
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>                                    
+                                    <ffimageLoading:CachedImage
                                         Grid.Column="0"
-                                        Source="{Binding Flag, Converter={StaticResource SvgImageSourceConverter}}"/>
+                                        HeightRequest="30"
+                                        Source="{Binding Flag, Converter={StaticResource SvgImageSourceConverter}}"
+                                        WidthRequest="60" />
                                     <StackLayout 
                                         Grid.Column="1"
                                         VerticalOptions="Center">
@@ -72,7 +78,7 @@
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>
+            </ListView>        
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
