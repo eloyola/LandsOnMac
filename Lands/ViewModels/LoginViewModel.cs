@@ -140,9 +140,10 @@
 
             var mainViewModel = MainViewModel.GetInstance();
             mainViewModel.Token = token;
-
             mainViewModel.Lands = new LandsViewModel();
-            await Application.Current.MainPage.Navigation.PushAsync(new LandsPage());
+
+            Application.Current.MainPage = new MasterPage();
+            //await Application.Current.MainPage.Navigation.PushAsync(new LandsPage());
 
             this.IsRunning = false;
             this.IsEnabled = true;

@@ -8,7 +8,7 @@
              xmlns:i18n="clr-namespace:Lands.Helpers"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              BackgroundColor="Silver"
-             Title="Information">
+             Title="Countries">
     <ContentPage.Resources>
         <ResourceDictionary>
             <ffimageloadingsvg:SvgImageSourceConverter 

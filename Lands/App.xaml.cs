@@ -1,12 +1,14 @@
-﻿using System;
-using Lands.Views;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-namespace Lands
+﻿namespace Lands
 {
+    using System;
+    using Lands.Views;
+    using Xamarin.Forms;
+    using Xamarin.Forms.Xaml;
+
     public partial class App : Application
     {
+        public static NavigationPage Navigator { get; internal set; }
+
         public App()
         {
             InitializeComponent();
