@@ -1,6 +1,5 @@
 ﻿namespace Lands.ViewModels
 {
-    using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using Lands.Helpers;
@@ -10,7 +9,10 @@
     {
         #region Properties
         public List<Land> LandsList { get; set; }
-        public TokenResponse Token { get; set; }
+
+        public string Token { get; set; }
+
+        public object TokenType { get; set; }
         #endregion
 
         #region ViewModels
@@ -51,9 +53,10 @@
         private void LoadMenu()
         {
             this.Menus = new ObservableCollection<MenuItemViewModel>();
-            this.Menus.Add(new MenuItemViewModel {
-                Icon="ic_settings",
-                PageName="MyProfilePage",
+            this.Menus.Add(new MenuItemViewModel
+            {
+                Icon = "ic_settings",
+                PageName = "MyProfilePage",
                 Title = Languages.MyProfile
             });
             this.Menus.Add(new MenuItemViewModel
