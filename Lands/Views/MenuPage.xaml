@@ -4,6 +4,7 @@
              xmlns:i18n="clr-namespace:Lands.Helpers"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              BackgroundColor="Navy"
+             IconImageSource="ic_menu"
              Title="{i18n:Translate Menu}">
     <ContentPage.Content>
         <StackLayout Padding="5,20,5,5">

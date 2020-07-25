@@ -28,7 +28,7 @@
         {
             if(this.PageName=="LoginPage")
             {
-                Application.Current.MainPage = new LoginPage();
+                Application.Current.MainPage = new NavigationPage(new LoginPage());
                 Settings.Token = string.Empty;
                 Settings.TokenType = string.Empty;
                 var mainViewModel = MainViewModel.GetInstance();
