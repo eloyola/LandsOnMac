@@ -75,6 +75,14 @@
             }
         }
 
+        public ICommand RegisterCommand
+        {
+            get
+            {
+                return new RelayCommand(Register);
+            }
+        }
+
         private async void Login()
         {
             if (string.IsNullOrEmpty(this.Email))
@@ -156,7 +164,14 @@
             this.IsEnabled = true;
             this.Email = string.Empty;
             this.Password = string.Empty;
-#endregion
+
         }
+
+        private async void Register()
+        {
+            MainViewModel.GetInstance().Register = new RegisterViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new RegisterPage());
+        }
+        #endregion
     }
 }

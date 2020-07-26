@@ -10,6 +10,8 @@
         #region Properties
         public List<Land> LandsList { get; set; }
 
+        public ObservableCollection<MenuItemViewModel> Menus { get; set; }
+        
         public string Token { get; set; }
 
         public object TokenType { get; set; }
@@ -22,7 +24,7 @@
 
         public LandViewModel Land { get; set; }
 
-        public ObservableCollection<MenuItemViewModel> Menus { get; set; }
+        public RegisterViewModel Register { get; set; }
         #endregion
 
         #region Constructor
@@ -63,7 +65,7 @@
             {
                 Icon = "ic_insert_chart",
                 PageName = "StatisticsPage",
-                Title = Languages.Statistics
+                Title = Languages.Statics
             });
             this.Menus.Add(new MenuItemViewModel
             {
