@@ -10,6 +10,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lands", "Lands\Lands.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lands.Domain", "Lands.Domain\Lands.Domain.csproj", "{8992E9F1-E188-4AF0-B46C-05A157771A90}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FE", "FE", "{538FC1C9-ECA9-4AE6-822A-F2B53E22B38C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,5 +77,10 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {11AFFF68-81A2-4C9A-8A9D-22C7DB1334B0}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{008BED29-5869-4B67-AE11-F05AB05D111E} = {538FC1C9-ECA9-4AE6-822A-F2B53E22B38C}
+		{74A62282-5C4A-4D0D-8783-97E28B7AD41F} = {538FC1C9-ECA9-4AE6-822A-F2B53E22B38C}
+		{28EFB821-B442-486D-B4C8-1107398BC96F} = {538FC1C9-ECA9-4AE6-822A-F2B53E22B38C}
 	EndGlobalSection
 EndGlobal
