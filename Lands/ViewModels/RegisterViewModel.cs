@@ -297,6 +297,7 @@
                 this.ImageSource = ImageSource.FromStream(() =>
                 {
                     var stream = file.GetStream();
+                    file.Dispose();
                     return stream;
                 });
             }
