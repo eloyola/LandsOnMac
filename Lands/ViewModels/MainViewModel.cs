@@ -4,6 +4,7 @@
     using System.Collections.ObjectModel;
     using Lands.Helpers;
     using Lands.Models;
+    using Lands.Domain;
 
     public class MainViewModel
     {
@@ -15,6 +16,8 @@
         public string Token { get; set; }
 
         public object TokenType { get; set; }
+
+        public User User { get; set; }
         #endregion
 
         #region ViewModels

@@ -118,12 +118,13 @@
                 return;
             }
 
+            var apiSecurity = Application.Current.Resources["APISecurity"].ToString();
             var token = await this.apiService.GetToken(
-                "https://landsapi1.azurewebsites.net/",
+                apiSecurity,
                 this.Email,
                 this.Password);
 
-            if (token ==null)
+            if (token == null)
             {
                 this.IsRunning = false;
                 this.IsEnabled = true;
@@ -146,9 +147,13 @@
                 return;
             }
 
+            var user = await this.apiService.GetUserByEmail(apiSecurity,
+                "/api", "Users/GetUserByEmail", "", "", this.Email);
+
             var mainViewModel = MainViewModel.GetInstance();
             mainViewModel.Token = token.AccessToken;
             mainViewModel.TokenType = token.TokenType;
+            mainViewModel.User = user;
 
             if (this.IsRemembered)
             {

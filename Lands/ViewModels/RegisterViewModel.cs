@@ -198,11 +198,11 @@
                 return;
             }
 
-            //byte[] imageArray = null;
-            //if (this.file != null)
-            //{
-            //    imageArray = FilesHelper.ReadFully(this.file.GetStream());
-            //}
+            byte[] imageArray = null;
+            if (this.file != null)
+            {
+                imageArray = FilesHelper.ReadFully(this.file.GetStream());
+            }
 
             var user = new User
             {
@@ -210,9 +210,9 @@
                 FirstName = this.FirstName,
                 LastName = this.LastName,
                 Telephone = this.Telephone,
-                //ImageArray = imageArray,
-                //UserTypeId = 1,
-                //Password = this.Password,
+                ImageArray = imageArray,
+                UserTypeId = 1,
+                Password = this.Password,
             };
 
             var apiSecurity = Application.Current.Resources["APISecurity"].ToString();
@@ -297,7 +297,6 @@
                 this.ImageSource = ImageSource.FromStream(() =>
                 {
                     var stream = file.GetStream();
-                    file.Dispose();
                     return stream;
                 });
             }

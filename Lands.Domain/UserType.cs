@@ -1,8 +1,10 @@
 ﻿namespace Lands.Domain
 {
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using Newtonsoft.Json;
 
     public class UserType
     {
@@ -14,5 +16,7 @@
         [Index("User_Email_Index", IsUnique = true)]
         public string Name { get; set; }
 
+        [JsonIgnore]
+        public virtual ICollection<User> Users { get; set; }
     }
 }
